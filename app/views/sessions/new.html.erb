@@ -1,17 +1,19 @@
 <div class="ui one column stackable center aligned page grid" id="login-card">
   <div class="ui fluid centered raised card column nine wide">
     <div class="content">
-      <form class="ui form">
-        <h1 class="ui dividing header">Log In <i class="red icon sign-in"></i></h1>
+
+      <%= form_for(:session, html: {class: "ui form", role: "form"}, url: login_path) do |f| %>
+        <h1 class="ui dividing header">Login <i class="red icon sign-in"></i></h1>
         <div class="field">
-          <input name="userEmail" placeholder="Email" type="email">
+          <%= f.text_field :username, placeholder: "Username" %>
         </div>
         <div class="field">
-          <input name="userPassword" placeholder="Password" type="password">
+          <%= f.password_field :password, placeholder: "Password" %>
         </div>
         <div class="ui hidden divider"></div>
-        <div class="fluid ui red button">Log In</div>
-      </form>
+        <%= f.button "Login", class: "fluid ui red button submit" %>
+      <% end %>
+
     </div>
     <div class="extra content">
     Not a user? <%= link_to "Sign Up", "#", class: "link-highlight" %>
