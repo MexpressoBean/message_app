@@ -4,9 +4,20 @@
     height: 450px;
 }
 
+.link-highlight {
+    color: rgb(226, 0, 0) !important;
+}
+
+.link-highlight:hover{
+    color: rgb(82, 0, 0) !important;
+}
+
 div.summary{
     strong{
         color: rgb(179, 0, 0);
     }
 } 
-    
+  
+div#login-card {
+    padding-top: 48px;
+}

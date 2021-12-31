@@ -6,6 +6,11 @@
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
+    <%# This ensures tht the JS for dropdown menus still work after back button is hit %>
+    <%# content_for tag in index.html.erb so page isnt cached.  This issue has to do with turbolinks and jquery %>
+    <% if content_for?(:head) %>
+      <%= yield(:head) %>
+    <% end %>
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
